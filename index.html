@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Office Hits</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Box Office Hits</h1>
+            
+            <!-- Add statistics banner -->
+            <div class="stats-banner">
+                <div class="stat-card">
+                    <h3>Total Films</h3>
+                    <div id="totalFilms" class="stat-value">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Box Office</h3>
+                    <div id="totalBoxOffice" class="stat-value">$0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Average Box Office</h3>
+                    <div id="avgBoxOffice" class="stat-value">$0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Most Recent Year</h3>
+                    <div id="recentYear" class="stat-value">2024</div>
+                </div>
+            </div>
+
+            <!-- Add visualization controls -->
+            <div class="viz-controls">
+                <button id="showGrid" class="viz-button active">Grid View</button>
+                <button id="showChart" class="viz-button">Chart View</button>
+                <button id="showBubble" class="viz-button">Bubble View</button>
+            </div>
+
+            <!-- Existing search and sort controls -->
+            <div class="search-sort-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search films...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="sort-controls">
+                    <select id="sortSelect">
+                        <option value="box_office_desc">Box Office (High to Low)</option>
+                        <option value="box_office_asc">Box Office (Low to High)</option>
+                        <option value="year_desc">Year (Newest First)</option>
+                        <option value="year_asc">Year (Oldest First)</option>
+                        <option value="title_asc">Title (A-Z)</option>
+                        <option value="title_desc">Title (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!-- Add chart container -->
+            <div id="chartContainer" class="chart-container" style="display: none;">
+                <canvas id="boxOfficeChart"></canvas>
+            </div>
+
+            <!-- Add timeline container -->
+            <div id="timelineContainer" class="timeline-container" style="display: none;">
+                <div id="timeline" class="timeline"></div>
+            </div>
+
+            <!-- Existing grid -->
+            <div class="films-grid" id="filmsGrid">
+                <!-- Films will be dynamically inserted here -->
+            </div>
+
+            <!-- Add bubble container -->
+            <div id="bubbleContainer" class="bubble-container" style="display: none;"></div>
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+    <!-- Add Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html> 
